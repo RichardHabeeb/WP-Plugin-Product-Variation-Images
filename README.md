@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/Matthewpco/WP-Plugin-Simple-Post-Types/main/spt-screenshot-2.png)
+![](https://raw.githubusercontent.com/Matthewpco/WP-Plugin-Product-Variation-Images/main/product-variation-images.png)
 
 # WordPress plugin to add additional product variation images
 
@@ -18,5 +18,4 @@
 
 
   <br>
-  
-![](https://raw.githubusercontent.com/Matthewpco/WP-Plugin-Product-Variation-Images/main/product-variation-images.png)
+
