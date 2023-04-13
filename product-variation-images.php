@@ -3,7 +3,7 @@
 Plugin Name: Product Variation Images
 Description: Allows users to add additional images to product variations in the product editor tab and display on front end by appending image to the product template front end.
 Plugin URI: https://github.com/Matthewpco/WP-Plugin-Product-Variation-Images
-Version: 1.0.0
+Version: 1.1.0
 Author: Gary Matthew Payne | BuiltMighty
 Author URI: https://wpwebdevelopment.com/
 */
