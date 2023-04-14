@@ -1,17 +1,34 @@
 jQuery(document).ready(function($) {
+    // Set default image
+    $('.Specifications-draw').append('<img class="pvi-variation-image" src="/wp-content/uploads/Artboard-1-1.png">');
     // When a variation is selected
     $(document).on('found_variation', function(event, variation) {
-        // If the variation has additional images
+		
+        // Remove any existing additional images
+        $('.pvi-variation-image').remove();
+        $('.pvi-variation-image-top').remove();
+        
+		// If the variation has additional images for top section
+        if (variation.pvi_variation_images_top) {
+			$('.images').append('<div class="pvi-variation-image-wrap"></div>');
+            // Loop through additional images and append them to the product gallery
+            $.each(variation.pvi_variation_images_top, function(index, imageUrlTop) {
+                $('.pvi-variation-image-wrap').append('<a href="' + imageUrlTop + '" target="_blank"><img class="pvi-variation-image-top" src="' + imageUrlTop + '"></a>');
+            });
+        }
+		
+        // If the variation has additional images for spec section
         if (variation.pvi_variation_images) {
-            // Remove any existing additional images
-            $('.pvi-variation-image').remove();
             // Loop through additional images and append them to the product gallery
             $.each(variation.pvi_variation_images, function(index, imageUrl) {
-                $('.Specifications-draw').append('<img class="pvi-variation-image" src="' + imageUrl + '">');
+                $('.Specifications-draw').append('<a href="' + imageUrl + '" target="_blank"><img class="pvi-variation-image" src="' + imageUrl + '"></a>');
             });
-        } else {
-            // If no additional images, remove any existing ones
-            $('.pvi-variation-image').remove();
+        }
+        
+        // If no additional images
+        if (!variation.pvi_variation_images) {
+            // Set default image
+            $('.Specifications-draw').append('<img class="pvi-variation-image-top" src="/wp-content/uploads/Artboard-1-1.png">');
         }
     });
 });
